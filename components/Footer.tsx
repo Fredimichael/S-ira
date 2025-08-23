@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* Instagram joyas */}
           <a
-            href="https://instagram.com/tuusuario"
+            href="https://instagram.com/saira.joyas"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:opacity-80 transition"
