@@ -39,7 +39,7 @@ export const products: Product[] = [
   // ACERO BLANCO//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   //Anillos
-  { id: 'sw-ring-01', title: 'Anillo Eclipse', price: 7500, category: 'acero-blanco', subcategory: 'anillos', image: '/placeholder/Anillo_Eclipse.jpg', description: 'Anillo de acero blanco con un diseño abierto y regulable. Su banda es lisa y pulida, y aumenta de grosor gradualmente desde la parte posterior hacia los dos extremos redondeados y macizos.' },
+  // { id: 'sw-ring-01', title: 'Anillo Eclipse', price: 7500, category: 'acero-blanco', subcategory: 'anillos', image: '/placeholder/Anillo_Eclipse.jpg', description: 'Anillo de acero blanco con un diseño abierto y regulable. Su banda es lisa y pulida, y aumenta de grosor gradualmente desde la parte posterior hacia los dos extremos redondeados y macizos.' },
   // { id: 'sw-ring-02', title: 'Anillo Prisma', price: 10100, category: 'acero-blanco', subcategory: 'anillos', image: '/placeholder/silver-ring-2.jpg', description: 'Diseño facetado que capta la luz.' },
   { id: 'sw-ring-03', title: 'Anillo Unión', price: 7500, category: 'acero-blanco', subcategory: 'anillos', image: '/placeholder/Anillo_Union.jpg', description: 'Anillo de acero blanco, de diseño abierto y regulable. La parte frontal presenta una forma fluida que simula un nudo simple o un eslabón de cadena alargado, con un acabado liso y pulido.', featured: true },
 
