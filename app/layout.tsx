@@ -9,8 +9,8 @@ import { Toaster } from 'react-hot-toast'
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  title: 'Sáira — Joyas en acero',
-  description: 'Ecommerce minimalista de joyas en acero (Sáira).',
+  title: 'Sáira Joyas',
+  description: 'Ecommerce de joyas en acero blanco y dorado (Sáira).',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
