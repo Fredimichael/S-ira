@@ -24,7 +24,7 @@ export default function CartPage() {
               <li key={i.id} className="py-4 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="relative w-36 h-36 rounded-xl overflow-hidden bg-neutral-100">
-                    <Image src={(i.images && i.images[0]) || i.image} alt={i.title} fill className="object-cover" />
+                      <Image src={i.images?.[0] || "/placeholder/Anillo_Dual.jpg"} alt={i.title} fill className="object-cover" />
                   </div>
                   <div>
                     <p className="font-medium">{i.title} <span className="opacity-60">x{i.qty}</span></p>
