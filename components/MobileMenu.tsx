@@ -7,7 +7,6 @@ export default function MobileMenu({ open, onClose }: { open: boolean, onClose: 
       <div className="container py-4 flex flex-col gap-3">
         <Link href="/catalog" onClick={onClose}>Catálogo</Link>
         <Link href="/contact" onClick={onClose}>Contacto</Link>
-        <Link href="/cart" onClick={onClose}>Carrito</Link>
       </div>
     </div>
   )

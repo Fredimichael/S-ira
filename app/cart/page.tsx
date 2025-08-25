@@ -1,11 +1,11 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useCart } from '@/context/CartContext'
 import { buildWhatsAppMessage, getWhatsAppLink } from '@/lib/whatsapp'
 
 export default function CartPage() {
   const { items, remove, clear, total } = useCart()
-
   const message = buildWhatsAppMessage(items, total)
   const wa = getWhatsAppLink(message)
 
@@ -21,10 +21,15 @@ export default function CartPage() {
         <div className="space-y-6">
           <ul className="divide-y">
             {items.map(i => (
-              <li key={i.id} className="py-4 flex items-center justify-between">
-                <div>
-                  <p className="font-medium">{i.title} <span className="opacity-60">x{i.qty}</span></p>
-                  <p className="text-sm opacity-70">${(i.price * i.qty).toFixed(0)}</p>
+              <li key={i.id} className="py-4 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="relative w-36 h-36 rounded-xl overflow-hidden bg-neutral-100">
+                    <Image src={(i.images && i.images[0]) || i.image} alt={i.title} fill className="object-cover" />
+                  </div>
+                  <div>
+                    <p className="font-medium">{i.title} <span className="opacity-60">x{i.qty}</span></p>
+                    <p className="text-sm opacity-70">${(i.price * i.qty).toFixed(0)}</p>
+                  </div>
                 </div>
                 <button onClick={() => remove(i.id)} className="text-sm underline">Quitar</button>
               </li>

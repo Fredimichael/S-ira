@@ -25,7 +25,7 @@ export default function ContactPage() {
         </p>
         <div className="flex gap-4 flex-wrap items-center justify-center">
           <a href={wa} target="_blank" className="px-6 py-3 rounded-full bg-white text-black text-lg">WhatsApp</a>
-          <a href="https://instagram.com/tuusuario" target="_blank" className="px-6 py-3 rounded-full bg-white text-black text-lg">Instagram</a>
+          <a href="https://instagram.com/saira.joyas" target="_blank" className="px-6 py-3 rounded-full bg-white text-black text-lg">Instagram</a>
         </div>
       </div>
     </section>

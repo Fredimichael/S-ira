@@ -11,7 +11,7 @@ export default function ProductCard({ p }: { p: Product }) {
     <div className="border rounded-2xl p-4 hover:shadow-sm transition">
       <Link href={`/product/${p.id}`}>
         <div className="relative aspect-square bg-neutral-100 rounded-xl mb-3 overflow-hidden">
-          <Image src={p.image} alt={p.title} fill className="object-cover" />
+          <Image src={p.images[0]} alt={p.title} fill className="object-cover" />
         </div>
       </Link>
       <Link href={`/product/${p.id}`} className="font-heading text-lg block hover:underline">{p.title}</Link>
