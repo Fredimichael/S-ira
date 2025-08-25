@@ -9,7 +9,7 @@ export default function ProductDetail({ product }: { product: Product }) {
   const { add } = useCart()
   const [active, setActive] = useState(0)
 
-  const images = product.images?.length ? product.images : [product.image]
+  const images = product.images && product.images.length > 0 ? product.images : []
 
   return (
     <div className="grid md:grid-cols-2 gap-8">
