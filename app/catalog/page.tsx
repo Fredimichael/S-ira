@@ -1,11 +1,22 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Filters from '@/components/Filters'
 import ProductGrid from '@/components/ProductGrid'
 import { products as data, type Product } from '@/data/products'
 
 export default function CatalogPage() {
   const [items, setItems] = useState<Product[]>(data)
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    const subcat = searchParams.get('subcat')
+    if (subcat) {
+      setItems(data.filter(p => p.subcategory === subcat))
+    } else {
+      setItems(data)
+    }
+  }, [searchParams])
 
   return (
     <div>

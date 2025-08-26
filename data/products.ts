@@ -10,6 +10,8 @@ export type Product = {
   images: string[]
   description: string
   featured?: boolean
+  // Agrega la propiedad outOfStock
+  outOfStock?: boolean 
 }
 
 export const products: Product[] = [
@@ -21,7 +23,7 @@ export const products: Product[] = [
   
   //Aros
   { id: 'gd-ear-01', title: 'Aros Prisma', price: 5700, category: 'acero-dorado', subcategory: 'aros', images:[ '/placeholder/Aros_Prisma.jpg'], description: 'Aro de acero dorado con un diseño minimalista en forma de mosquetón o eslabón rectangular. El centro está adornado con una única zirconia brillante de talla baguette, sujeta por cuatro grapas.' },
-  { id: 'gd-ear-02', title: 'Aros Bold', price: 6200, category: 'acero-dorado', subcategory: 'aros', images:[ '/placeholder/Aros_Bold.jpg'], description: 'Aro tipo argolla (huggie) de acero dorado. Es un diseño clásico y atemporal, que se destaca por su forma ancha, de perfil redondeado y una superficie lisa con acabado pulido brillante.' },
+  { id: 'gd-ear-02', title: 'Aros Bold', price: 6200, category: 'acero-dorado', subcategory: 'aros', images:[ '/placeholder/Aros_Bold.jpg'], description: 'Aro tipo argolla (huggie) de acero dorado. Es un diseño clásico y atemporal, que se destaca por su forma ancha, de perfil redondeado y una superficie lisa con acabado pulido brillante.' ,outOfStock: true },
   { id: 'gd-ear-03', title: 'Aros Stardust', price: 8400, category: 'acero-dorado', subcategory: 'aros', images:[ '/placeholder/Aros_Stardust.jpg'], description: 'Aro tipo argolla pequeña (huggie) de acero dorado. Su diseño presenta una textura que simula la forma del bambú, con incrustaciones de zirconias brillantes.' },
   
   //Collares
@@ -39,8 +41,7 @@ export const products: Product[] = [
   // ACERO BLANCO//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   //Anillos
-  // { id: 'sw-ring-01', title: 'Anillo Eclipse', price: 7500, category: 'acero-blanco', subcategory: 'anillos', images:[ '/placeholder/Anillo_Eclipse.jpg', description: 'Anillo de acero blanco con un diseño abierto y regulable. Su banda es lisa y pulida, y aumenta de grosor gradualmente desde la parte posterior hacia los dos extremos redondeados y macizos.' },
-  // { id: 'sw-ring-02', title: 'Anillo Prisma', price: 10100, category: 'acero-blanco', subcategory: 'anillos', images:[ '/placeholder/silver-ring-2.jpg', description: 'Diseño facetado que capta la luz.' },
+  { id: 'sw-ring-01', title: 'Anillo Eclipse', price: 7500, category: 'acero-blanco', subcategory: 'anillos', images:[ '/placeholder/Anillo_Eclipse.jpg'], description: 'Anillo de acero blanco con un diseño abierto y regulable. Su banda es lisa y pulida, y aumenta de grosor gradualmente desde la parte posterior hacia los dos extremos redondeados y macizos.' ,outOfStock: true} ,
   { id: 'sw-ring-03', title: 'Anillo Unión', price: 7500, category: 'acero-blanco', subcategory: 'anillos', images:[ '/placeholder/Anillo_Union.jpg','/placeholder/Anillo_Union2.jpg'], description: 'Anillo de acero blanco, de diseño abierto y regulable. La parte frontal presenta una forma fluida que simula un nudo simple o un eslabón de cadena alargado, con un acabado liso y pulido.', featured: true },
 
   //Aros
