@@ -1,6 +1,11 @@
 // data/banners.ts
 export const banners = [
   {
+    image: "/banners/15_OFF.png",
+    alt: "Catalogo de Saira - 15% OFF en todos los productos",
+    href: "/catalog?", 
+  },
+  {
     image: "/banners/1.png",
     alt: "Ver anillos",
     href: "/catalog?subcat=pulseras",

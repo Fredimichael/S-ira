@@ -12,6 +12,7 @@ const subs: { key: Subcategory, label: string }[] = [
   { key: 'collares', label: 'Collares' },
   { key: 'pulseras', label: 'Pulseras' },
   { key: 'brazaletes', label: 'Brazaletes' },
+  { key: 'tobilleras', label: 'Tobilleras' },
 
 ]
 

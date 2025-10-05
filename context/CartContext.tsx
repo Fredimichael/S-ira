@@ -4,11 +4,15 @@ import type { Product } from '@/data/products'
 
 type CartItem = Product & { qty: number }
 
+// --- ¡LA SOLUCIÓN ESTÁ AQUÍ! ---
+// Agregamos las propiedades que faltaban al tipo.
 type CartContextType = {
   items: CartItem[]
   add: (p: Product) => void
   remove: (id: string) => void
   clear: () => void
+  subtotal: number // <-- Propiedad agregada
+  discountAmount: number // <-- Propiedad agregada
   total: number
 }
 
@@ -43,10 +47,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const remove = (id: string) => setItems(prev => prev.filter(i => i.id !== id))
   const clear = () => setItems([])
 
-  const total = useMemo(() => items.reduce((s, i) => s + i.price * i.qty, 0), [items])
+  const subtotal = useMemo(() => items.reduce((s, i) => s + i.price * i.qty, 0), [items])
+  
+  const discountRate = 0.15
+  
+  const discountAmount = useMemo(() => subtotal * discountRate, [subtotal])
+
+  const total = useMemo(() => subtotal - discountAmount, [subtotal, discountAmount])
 
   return (
-    <CartContext.Provider value={{ items, add, remove, clear, total }}>
+    <CartContext.Provider value={{ items, add, remove, clear, subtotal, discountAmount, total }}>
       {children}
     </CartContext.Provider>
   )

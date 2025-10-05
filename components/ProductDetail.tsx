@@ -8,6 +8,8 @@ import type { Product } from '@/data/products'
 export default function ProductDetail({ product }: { product: Product }) {
   const { add } = useCart()
   const [active, setActive] = useState(0)
+  const discountRate = 0.15 // 15% de descuento
+  const discountedPrice = product.price * (1 - discountRate)
 
   const images = product.images && product.images.length > 0 ? product.images : []
 
@@ -16,6 +18,9 @@ export default function ProductDetail({ product }: { product: Product }) {
       <div>
         <div className="relative aspect-square bg-neutral-100 rounded-2xl overflow-hidden">
           <Image src={images[active]} alt={product.title} fill className="object-cover" />
+          <div className="absolute top-3 right-3 bg-red-500 text-white text-sm font-bold px-3 py-1.5 rounded-full">
+            15% OFF
+          </div>
         </div>
         {images.length > 1 && (
           <div className="mt-3 grid grid-cols-5 gap-2">
@@ -31,7 +36,10 @@ export default function ProductDetail({ product }: { product: Product }) {
         <h1 className="font-heading text-3xl">{product.title}</h1>
         <p className="opacity-70 capitalize">{product.category.replace('-', ' ')} — {product.subcategory}</p>
         <p className="opacity-90">{product.description}</p>
-        <p className="text-2xl font-semibold">${product.price.toFixed(0)}</p>
+        <div className="flex items-baseline gap-3">
+          <p className="text-3xl font-bold">${discountedPrice.toFixed(0)}</p>
+          <p className="text-xl font-semibold line-through opacity-50">${product.price.toFixed(0)}</p>
+        </div>
         <div className="flex gap-3">
           <button
             onClick={() => { add(product); toast.success('Producto agregado al carrito') }}
